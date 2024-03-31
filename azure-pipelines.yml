@@ -11,13 +11,17 @@ pool:
 
 steps:
 - script: |
-    #Set up environment for the project
+    # Set up environment for the project
     conda env create -f pytorch-env.yml
     conda activate pytorch-env
+  displayName: 'Environment creation'
 
-    #Run the training script
+- script: |
+    # Run the training script
     python src/train.py
+  displayName: 'Train pipeline'
 
-    #Run the tests
+- script: |
+    # Run the tests
     pytest tests/
-    displayName: 'Environment creation->Train pipeline->Python tests'
+  displayName: 'Python tests'
