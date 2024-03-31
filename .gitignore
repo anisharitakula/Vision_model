@@ -1,0 +1,11 @@
+#Ignore data folders
+data/
+data/*
+
+#Ignore model folders
+models/
+models/*
+
+#Ignore the venv package
+mnist_model/
+mnist_model/*
