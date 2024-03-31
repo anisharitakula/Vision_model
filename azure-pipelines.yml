@@ -1,0 +1,23 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+  #Set up environment for the project
+  conda env create -f pytorch-env.yml
+  conda activate pytorch-env
+
+  #Run the training script
+  python src/train.py
+
+  #Run the tests
+  pytest tests/
+  displayName: 'Environment creation->Train pipeline->Python tests'
