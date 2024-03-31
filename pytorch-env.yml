@@ -1,0 +1,13 @@
+
+name: pytorch-env
+channels:
+  - defaults
+#   - pytorch
+dependencies:
+  - python==3.9.16
+  - pip
+  - pip:
+      - azureml-sdk
+      - torch==2.2.2
+      - torchvision==0.17.2
+      - pytest==8.1.1
