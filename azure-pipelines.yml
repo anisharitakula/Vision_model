@@ -12,6 +12,7 @@ pool:
 steps:
 - script: |
     # Set up environment for the project
+    conda init bash
     conda env create -f pytorch-env.yml
     conda activate pytorch-env
   displayName: 'Environment creation'
