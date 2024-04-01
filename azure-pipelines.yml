@@ -12,10 +12,8 @@ pool:
 steps:
 - script: |
     # Set up environment for the project
-    conda init bash
-    conda env create -f pytorch-env.yml
-    conda activate pytorch-env
-  displayName: 'Environment creation'
+    python run_pytorch_control.py
+  displayName: 'Environment creation and code run'
 
 - script: |
     # Run the training script
